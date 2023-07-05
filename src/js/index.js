@@ -14,7 +14,7 @@ let Counter = (props) =>{
             <div className="container mt-4 rounded">
                 <div className="row">
                     <div className="col rounded">
-                    <i className="fas fa-stopwatch"></i>
+                    <i className="fas fa-stopwatch shake-lr"></i>
                     </div>
                     <div className="col rounded">0</div>
                     <div className="col rounded">0</div>
