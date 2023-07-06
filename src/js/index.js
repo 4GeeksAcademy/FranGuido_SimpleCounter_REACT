@@ -26,8 +26,7 @@ function Counter (props) {
                 <div className="col rounded">{props.thirdDigit % 10}</div>
                 <div className="col rounded">{props.secondDigit % 10}</div>
                 <div className="col rounded">{props.firstDigit % 10}</div>
-            </div>  
-            <div>{counterMessage}</div>       
+            </div>       
         </div>
     )
 
