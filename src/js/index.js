@@ -16,8 +16,8 @@ let Counter = (props) =>{
                     <div className="col rounded">
                     <i className="fas fa-stopwatch shake-lr"></i>
                     </div>
-                    <div className="col rounded">0</div>
-                    <div className="col rounded">0</div>
+                    <div className="col rounded">{props.sixthDigit %10}</div>
+                    <div className="col rounded">{props.fifthDigit %10}</div>
                     <div className="col rounded">{props.fourthDigit %10}</div>
                     <div className="col rounded">{props.thirdDigit %10}</div>
                     <div className="col rounded">{props.secondDigit %10}</div>
@@ -34,6 +34,8 @@ Counter.propTypes ={
     secondDigit: propTypes.number,
     thirdDigit: propTypes.number,
     fourthDigit: propTypes.number,
+    fifthDigit: propTypes.number,
+    sixthDigit: propTypes.number,
 }
 
 
@@ -41,6 +43,8 @@ Counter.propTypes ={
 let timer = 0;
 
 setInterval( function (){
+    let sixth = Math.floor(timer/100000);
+    let fifth = Math.floor(timer/10000);
     let fourth = Math.floor(timer/1000);
     let third = Math.floor(timer/100);
     let second = Math.floor(timer/10);
@@ -48,7 +52,7 @@ setInterval( function (){
     timer ++,
 
     //render your react application
-    ReactDOM.render(<Counter firstDigit={first} secondDigit={second} thirdDigit={third} fourthDigit={fourth} />, document.querySelector("#app"));
+    ReactDOM.render(<Counter firstDigit={first} secondDigit={second} thirdDigit={third} fourthDigit={fourth} fifthDigit={fifth} sixthDigit={sixth}/>, document.querySelector("#app"));
 }, 1000)
 
 
